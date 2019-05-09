@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'default' => env('LOG_CHANNEL', 'stack'),
+    'default' => env('LOG_CHANNEL', 'papertrail'),
 
     /*
     |--------------------------------------------------------------------------
@@ -66,8 +66,8 @@ return [
             'level' => 'debug',
             'handler' => SyslogUdpHandler::class,
             'handler_with' => [
-                'host' => env('PAPERTRAIL_URL'),
-                'port' => env('PAPERTRAIL_PORT'),
+                'host' => env('PAPERTRAIL_URL', 'logs5.papertrailapp.com'),
+                'port' => env('PAPERTRAIL_PORT', '26183'),
             ],
         ],
 
